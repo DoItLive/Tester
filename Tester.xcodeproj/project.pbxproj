@@ -15,6 +15,7 @@
 		E94C083B15ED3B820097397B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E94C083A15ED3B820097397B /* AppDelegate.m */; };
 		E94C083E15ED3B820097397B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94C083C15ED3B820097397B /* MainStoryboard.storyboard */; };
 		E94C084115ED3B820097397B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94C084015ED3B820097397B /* ViewController.m */; };
+		E94C084815ED3E570097397B /* File in Resources */ = {isa = PBXBuildFile; fileRef = E94C084715ED3E570097397B /* File */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		E94C083D15ED3B820097397B /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		E94C083F15ED3B820097397B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E94C084015ED3B820097397B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		E94C084715ED3E570097397B /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,6 +52,7 @@
 		E94C081B15ED3B820097397B = {
 			isa = PBXGroup;
 			children = (
+				E94C084715ED3E570097397B /* File */,
 				E94C083015ED3B820097397B /* Tester */,
 				E94C082915ED3B820097397B /* Frameworks */,
 				E94C082715ED3B820097397B /* Products */,
@@ -151,6 +154,7 @@
 			files = (
 				E94C083515ED3B820097397B /* InfoPlist.strings in Resources */,
 				E94C083E15ED3B820097397B /* MainStoryboard.storyboard in Resources */,
+				E94C084815ED3E570097397B /* File in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
