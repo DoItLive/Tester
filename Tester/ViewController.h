@@ -8,6 +8,23 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+
+    UIButton *syncButton;
+    UILabel *dirLabel;
+    
+    
+}
+
+
+
+@property (nonatomic) IBOutlet UIButton *syncButton;
+@property (nonatomic) IBOutlet UILabel *dirLabel;
+
+
+-(IBAction)syncButtonPressed:(id)sender;
+
+
 
 @end
+

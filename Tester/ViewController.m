@@ -14,6 +14,8 @@
 
 @implementation ViewController
 
+@synthesize syncButton, dirLabel;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -26,9 +28,20 @@
     // Release any retained subviews of the main view.
 }
 
+
+-(IBAction)syncButtonPressed:(id)sender{
+    
+    
+    //Here you go thomas!!
+    
+    dirLabel.text=[[NSString alloc] initWithFormat:@""];
+}
+
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    return YES;
+    return NO;
 }
 
 @end
