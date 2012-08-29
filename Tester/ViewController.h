@@ -9,9 +9,26 @@
 #import <UIKit/UIKit.h>
 #import "Connection.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController {
+
+    UIButton *syncButton;
+    UILabel *dirLabel;
+    
+    
+}
+
+
+
+@property (nonatomic) IBOutlet UIButton *syncButton;
+@property (nonatomic) IBOutlet UILabel *dirLabel;
+
+
+-(IBAction)syncButtonPressed:(id)sender;
+
+
 
 -(void)response:(NSData*)receivedData;
 -(void)checkForPartner;
 
 @end
+
