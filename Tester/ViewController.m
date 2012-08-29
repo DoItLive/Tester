@@ -47,6 +47,8 @@
 -(IBAction)syncButtonPressed:(id)sender{
     
     dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",[[locationManager heading] trueHeading]];
+    time=0;
+    [self checkForPartner];
 }
 
 
@@ -81,6 +83,17 @@
      }else if(time == 10){
         \\Do nothing
      }else{
+    /*
+    if(partnerHeading == localHeading-180){
+        //Do GUI stuff
+     }else if(time == 10){
+        \\Do nothing
+     }else{
+     //Maybe make this on timer to slow it down
+        time++;
+        [self checkForPartner];
+     }
+    */
      //Maybe make this on timer to slow it down
         time++;
         [self checkForPartner];

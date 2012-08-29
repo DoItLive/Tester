@@ -16,6 +16,9 @@
     UIButton *syncButton;
     UILabel *dirLabel;
     
+    NSInteger time;
+    
+    
     CLLocationDirection *localHeading;
 }
 -(void)response:(NSData*)receivedData;
