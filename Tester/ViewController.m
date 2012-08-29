@@ -31,4 +31,26 @@
     return YES;
 }
 
+-(void)checkForPartner{
+    
+    NSString *postString = [[NSString alloc] initWithFormat:@"UID=AAA&heading=123"];
+    Connection *junk = [[Connection alloc] initWithSelector:@selector(response:)
+                                toTarget:self
+                                 withURL:@"http://linus.highpoint.edu/~cweigandt/tester/getPartner.php"
+                              withString:postString];
+   
+
+    
+}
+
+-(void)response:(NSData*)receivedData{
+    
+    NSString *responseString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+    NSArray *chunks = [[NSArray alloc] initWithArray:[responseString componentsSeparatedByString: @","]];
+    
+    NSInteger partnerHeading = (NSInteger)[[chunks objectAtIndex:0] integerValue];
+    //Compare partnerHeading with local heading
+    
+}
+
 @end

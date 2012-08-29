@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Connection.h"
 
 @interface ViewController : UIViewController
+
+-(void)response:(NSData*)receivedData;
+-(void)checkForPartner;
 
 @end
