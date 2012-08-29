@@ -16,6 +16,8 @@
     
     
 }
+-(void)response:(NSData*)receivedData;
+-(void)checkForPartner;
 
 
 
@@ -26,9 +28,6 @@
 -(IBAction)syncButtonPressed:(id)sender;
 
 
-
--(void)response:(NSData*)receivedData;
--(void)checkForPartner;
 
 @end
 
