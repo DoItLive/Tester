@@ -14,10 +14,21 @@
 
 @implementation ViewController
 
+@synthesize locationManager;
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.delegate = self;
+    if (![CLLocationManager headingAvailable]) {
+        NSLog(@"Error: Heading is not available on this device");
+    }
+    [locationManager startUpdatingHeading];
+    NSLog(@"Heading: %lf",[[locationManager heading] trueHeading]);
 }
 
 - (void)viewDidUnload
