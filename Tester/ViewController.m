@@ -35,6 +35,8 @@
     //Here you go thomas!!
     
     dirLabel.text=[[NSString alloc] initWithFormat:@""];
+    time=0;
+    [self checkForPartner];
 }
 
 
@@ -44,10 +46,11 @@
     return NO;
 }
 
+//t == timer
 -(void)checkForPartner{
     
     NSString *postString = [[NSString alloc] initWithFormat:@"UID=AAA&heading=123"];
-    Connection *junk = [[Connection alloc] initWithSelector:@selector(response:)
+    [[Connection alloc] initWithSelector:@selector(response:)
                                 toTarget:self
                                  withURL:@"http://linus.highpoint.edu/~cweigandt/tester/getPartner.php"
                               withString:postString];
@@ -62,8 +65,17 @@
     NSArray *chunks = [[NSArray alloc] initWithArray:[responseString componentsSeparatedByString: @","]];
     
     NSInteger partnerHeading = (NSInteger)[[chunks objectAtIndex:0] integerValue];
-    //Compare partnerHeading with local heading
-    
+    /*
+    if(partnerHeading == localHeading-180){
+        //Do GUI stuff
+     }else if(time == 10){
+        \\Do nothing
+     }else{
+     //Maybe make this on timer to slow it down
+        time++;
+        [self checkForPartner];
+     }
+    */
 }
 
 @end

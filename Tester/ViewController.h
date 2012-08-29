@@ -14,6 +14,8 @@
     UIButton *syncButton;
     UILabel *dirLabel;
     
+    NSInteger time;
+    
     
 }
 -(void)response:(NSData*)receivedData;
