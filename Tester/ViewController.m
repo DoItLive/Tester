@@ -15,11 +15,22 @@
 @implementation ViewController
 
 @synthesize syncButton, dirLabel;
+@synthesize locationManager, localHeading;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    self.locationManager = [[CLLocationManager alloc] init];
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    locationManager.headingFilter = kCLHeadingFilterNone;
+    locationManager.delegate = self;
+    [locationManager startUpdatingLocation];
+    if (![CLLocationManager headingAvailable] || ![CLLocationManager locationServicesEnabled]) {
+        NSLog(@"Error: Heading or location services is not available on this device");
+    }
+    [locationManager startUpdatingHeading];
 }
 
 - (void)viewDidUnload
@@ -28,13 +39,14 @@
     // Release any retained subviews of the main view.
 }
 
+-(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
+    NSLog(@"%lf",newHeading.headingAccuracy);
+}
+
 
 -(IBAction)syncButtonPressed:(id)sender{
     
-    
-    //Here you go thomas!!
-    
-    dirLabel.text=[[NSString alloc] initWithFormat:@""];
+    dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",[[locationManager heading] trueHeading]];
     time=0;
     [self checkForPartner];
 }
