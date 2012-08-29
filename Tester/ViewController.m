@@ -49,7 +49,7 @@
 //t == timer
 -(void)checkForPartner{
     
-    NSString *postString = [[NSString alloc] initWithFormat:@"UID=AAA&heading=123"];
+    NSString *postString = [[NSString alloc] initWithFormat:@"UID=AAA&heading=333"];
     [[Connection alloc] initWithSelector:@selector(response:)
                                 toTarget:self
                                  withURL:@"http://linus.highpoint.edu/~cweigandt/tester/getPartner.php"
@@ -61,21 +61,24 @@
 
 -(void)response:(NSData*)receivedData{
     
-    NSString *responseString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
-    NSArray *chunks = [[NSArray alloc] initWithArray:[responseString componentsSeparatedByString: @","]];
+    if([receivedData length] > 1){
+        NSString *responseString = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
+        NSArray *chunks = [[NSArray alloc] initWithArray:[responseString componentsSeparatedByString: @" - "]];
     
-    NSInteger partnerHeading = (NSInteger)[[chunks objectAtIndex:0] integerValue];
-    /*
-    if(partnerHeading == localHeading-180){
-        //Do GUI stuff
-     }else if(time == 10){
-        \\Do nothing
-     }else{
-     //Maybe make this on timer to slow it down
-        time++;
-        [self checkForPartner];
-     }
-    */
+        NSString* partnerUID = [chunks objectAtIndex:0];
+        CLLocationDirection partnerHeading = (CLLocationDirection)[[chunks objectAtIndex:1] doubleValue];
+        /*
+        if(partnerHeading == (localHeading-180){
+            NSLog(@"You have connected to user %@", partnerUID);
+        }else if(time == 10){
+            \\Do nothing
+        }else{
+        //Maybe make this on timer to slow it down
+            time++;
+            [self checkForPartner];
+        }
+        */
+    }
 }
 
 @end
