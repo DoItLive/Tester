@@ -41,7 +41,7 @@
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     //NSLog(@"%lf",newHeading.headingAccuracy);
-    localHeading = newHeading.headingAccuracy;
+    localHeading = newHeading.trueHeading;
 }
 
 
@@ -59,10 +59,9 @@
     return NO;
 }
 
-//t == timer
 -(void)checkForPartner{
     
-    NSString *postString = [[NSString alloc] initWithFormat:@"UID=AAA&heading=333"];
+    NSString *postString = [[NSString alloc] initWithFormat:@"UID=BBB&heading=%lf",localHeading];
     [[Connection alloc] initWithSelector:@selector(response:)
                                 toTarget:self
                                  withURL:@"http://linus.highpoint.edu/~cweigandt/tester/getPartner.php"
@@ -83,12 +82,13 @@
         
         double error = 180 - abs(partnerHeading - localHeading);
         if(error < 5 && error > -5){
-            NSLog(@"You have connected to user %@", partnerUID);
+            NSLog(@"---------You have connected to user %@", partnerUID);
         }else if(time == 10){
             //Do nothing
         }else{
         //Maybe make this on timer to slow it down
             time++;
+            usleep(300000);
             [self checkForPartner];
         }
     }
