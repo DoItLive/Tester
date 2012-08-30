@@ -85,7 +85,7 @@
         CLLocationDirection partnerHeading = (CLLocationDirection)[[chunks objectAtIndex:1] doubleValue];
         
         double error = 180 - abs(partnerHeading - localHeading);
-        if(error < 5 && error > -5){
+        if(error < 12 && error > -12){
             NSLog(@"---------You have connected to user %@", partnerUID);
         }else if(time == 10){
             [syncButton setEnabled:TRUE];
