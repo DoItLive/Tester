@@ -14,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize syncButton, dirLabel;
+@synthesize syncButton, dirLabel, arrow;
 @synthesize locationManager;
 
 - (void)viewDidLoad
@@ -41,7 +41,8 @@
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     //NSLog(@"%lf",newHeading.headingAccuracy);
-    localHeading = newHeading.headingAccuracy;
+    localHeading = newHeading.trueHeading;
+    arrow.transform = CGAffineTransformMakeRotation((((int) (90 - localHeading)) % 360)*2*M_PI);
 }
 
 

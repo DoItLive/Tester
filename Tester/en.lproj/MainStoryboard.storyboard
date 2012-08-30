@@ -44,6 +44,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="arrow" destination="DHb-cA-LYd" id="xWS-zD-Eva"/>
                         <outlet property="dirLabel" destination="Meg-Oa-b2D" id="YSv-vi-Zgf"/>
                         <outlet property="syncButton" destination="UQa-4L-IyM" id="j2t-bA-OWJ"/>
                     </connections>
