@@ -49,6 +49,7 @@
     
     dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",[[locationManager heading] trueHeading]];
     time=0;
+    [syncButton setEnabled:FALSE];
     [self checkForPartner];
 }
 
@@ -84,7 +85,7 @@
         if(error < 5 && error > -5){
             NSLog(@"---------You have connected to user %@", partnerUID);
         }else if(time == 10){
-            //Do nothing
+            [syncButton setEnabled:TRUE];
         }else{
         //Maybe make this on timer to slow it down
             time++;
