@@ -18,6 +18,7 @@
 		E94C083E15ED3B820097397B /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E94C083C15ED3B820097397B /* MainStoryboard.storyboard */; };
 		E94C084115ED3B820097397B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E94C084015ED3B820097397B /* ViewController.m */; };
 		E94C084815ED3E570097397B /* File in Resources */ = {isa = PBXBuildFile; fileRef = E94C084715ED3E570097397B /* File */; };
+		E94C084A15ED46270097397B /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E94C084915ED46270097397B /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		E94C083F15ED3B820097397B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		E94C084015ED3B820097397B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		E94C084715ED3E570097397B /* File */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = File; sourceTree = "<group>"; };
+		E94C084915ED46270097397B /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94C084A15ED46270097397B /* CoreLocation.framework in Frameworks */,
 				E94C082B15ED3B820097397B /* UIKit.framework in Frameworks */,
 				E94C082D15ED3B820097397B /* Foundation.framework in Frameworks */,
 				E94C082F15ED3B820097397B /* CoreGraphics.framework in Frameworks */,
@@ -83,6 +86,7 @@
 		E94C082915ED3B820097397B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E94C084915ED46270097397B /* CoreLocation.framework */,
 				E94C082A15ED3B820097397B /* UIKit.framework */,
 				E94C082C15ED3B820097397B /* Foundation.framework */,
 				E94C082E15ED3B820097397B /* CoreGraphics.framework */,

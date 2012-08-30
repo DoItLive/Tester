@@ -7,29 +7,30 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 #import "Connection.h"
 
-@interface ViewController : UIViewController {
+@interface ViewController : UIViewController <CLLocationManagerDelegate> {
+    CLLocationManager *locationManager;
 
     UIButton *syncButton;
     UILabel *dirLabel;
     UIImageView *arrow;
     
+    NSInteger time;
     
+    
+    CLLocationDirection localHeading;
 }
 -(void)response:(NSData*)receivedData;
 -(void)checkForPartner;
 
-
-
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) IBOutlet UIButton *syncButton;
 @property (nonatomic) IBOutlet UILabel *dirLabel;
 @property (nonatomic) IBOutlet UIImageView *arrow;
 
-
 -(IBAction)syncButtonPressed:(id)sender;
-
-
 
 @end
 
