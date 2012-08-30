@@ -19,13 +19,12 @@
     NSInteger time;
     
     
-    CLLocationDirection *localHeading;
+    CLLocationDirection localHeading;
 }
 -(void)response:(NSData*)receivedData;
 -(void)checkForPartner;
 
 @property (strong, nonatomic) CLLocationManager *locationManager;
-@property (nonatomic) CLLocationDirection *localHeading;
 @property (nonatomic) IBOutlet UIButton *syncButton;
 @property (nonatomic) IBOutlet UILabel *dirLabel;
 

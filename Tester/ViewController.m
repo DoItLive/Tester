@@ -15,7 +15,7 @@
 @implementation ViewController
 
 @synthesize syncButton, dirLabel;
-@synthesize locationManager, localHeading;
+@synthesize locationManager;
 
 - (void)viewDidLoad
 {
@@ -40,7 +40,8 @@
 }
 
 -(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
-    NSLog(@"%lf",newHeading.headingAccuracy);
+    //NSLog(@"%lf",newHeading.headingAccuracy);
+    localHeading = newHeading.headingAccuracy;
 }
 
 
@@ -79,17 +80,16 @@
     
         NSString* partnerUID = [chunks objectAtIndex:0];
         CLLocationDirection partnerHeading = (CLLocationDirection)[[chunks objectAtIndex:1] doubleValue];
-        /*
-        if(partnerHeading == (localHeading-180){
+        
+        if(partnerHeading == (localHeading -180)){
             NSLog(@"You have connected to user %@", partnerUID);
         }else if(time == 10){
-            \\Do nothing
+            //Do nothing
         }else{
         //Maybe make this on timer to slow it down
             time++;
             [self checkForPartner];
         }
-        */
     }
 }
 
