@@ -42,12 +42,15 @@
 -(void) locationManager:(CLLocationManager *)manager didUpdateHeading:(CLHeading *)newHeading {
     //NSLog(@"%lf",newHeading.headingAccuracy);
     localHeading = newHeading.trueHeading;
+    double rotation = (((int) (90 - localHeading)) % 360)/180.0*M_PI;
+    arrow.transform = CGAffineTransformMakeRotation(rotation);
+    dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",[[locationManager heading] trueHeading]];
+
 }
 
 
 -(IBAction)syncButtonPressed:(id)sender{
     
-    dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",[[locationManager heading] trueHeading]];
     time=0;
     [syncButton setEnabled:FALSE];
     [self checkForPartner];
@@ -93,6 +96,8 @@
             [self checkForPartner];
         }
     }
+    [syncButton setEnabled:TRUE];
+
 }
 
 @end
