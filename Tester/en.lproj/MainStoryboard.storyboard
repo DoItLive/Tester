@@ -30,24 +30,32 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Direction" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="25" id="Meg-Oa-b2D">
-                                <rect key="frame" x="261" y="325" width="139" height="91"/>
+                                <rect key="frame" x="373" y="254" width="139" height="91"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="leftArrow.png" id="DHb-cA-LYd">
+                                <rect key="frame" x="102" y="406" width="330" height="250"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="arrow" destination="DHb-cA-LYd" id="xWS-zD-Eva"/>
                         <outlet property="dirLabel" destination="Meg-Oa-b2D" id="YSv-vi-Zgf"/>
                         <outlet property="syncButton" destination="UQa-4L-IyM" id="j2t-bA-OWJ"/>
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-166" y="-203"/>
+            <point key="canvasLocation" x="-213" y="-323"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="leftArrow.png" width="600" height="600"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

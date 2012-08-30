@@ -14,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize syncButton, dirLabel;
+@synthesize syncButton, dirLabel, arrow;
 @synthesize locationManager;
 
 - (void)viewDidLoad
