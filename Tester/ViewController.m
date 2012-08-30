@@ -81,7 +81,8 @@
         NSString* partnerUID = [chunks objectAtIndex:0];
         CLLocationDirection partnerHeading = (CLLocationDirection)[[chunks objectAtIndex:1] doubleValue];
         
-        if(partnerHeading == (localHeading -180)){
+        double error = 180 - abs(partnerHeading - localHeading);
+        if(error < 5 && error > -5){
             NSLog(@"You have connected to user %@", partnerUID);
         }else if(time == 10){
             //Do nothing
