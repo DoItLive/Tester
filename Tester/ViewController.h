@@ -13,6 +13,7 @@
 
     UIButton *syncButton;
     UILabel *dirLabel;
+    UIImageView *arrow;
     
     
 }
@@ -23,6 +24,7 @@
 
 @property (nonatomic) IBOutlet UIButton *syncButton;
 @property (nonatomic) IBOutlet UILabel *dirLabel;
+@property (nonatomic) IBOutlet UIImageView *arrow;
 
 
 -(IBAction)syncButtonPressed:(id)sender;
