@@ -15,6 +15,7 @@
 
     UIButton *syncButton;
     UILabel *dirLabel;
+    UILabel *errorLabel;
     UIImageView *arrow;
     
     NSInteger time;
@@ -28,6 +29,7 @@
 @property (strong, nonatomic) CLLocationManager *locationManager;
 @property (nonatomic) IBOutlet UIButton *syncButton;
 @property (nonatomic) IBOutlet UILabel *dirLabel;
+@property (nonatomic) IBOutlet UILabel *errorLabel;
 @property (nonatomic) IBOutlet UIImageView *arrow;
 
 -(IBAction)syncButtonPressed:(id)sender;
