@@ -31,6 +31,13 @@
         NSLog(@"Error: Heading or location services is not available on this device");
     }
     [locationManager startUpdatingHeading];
+    
+    //
+    NSString* path = [[NSString alloc] initWithFormat:@"http://chart.apis.google.com/chart?cht=qr&chs=120x120&chld=L&choe=UTF-8&HIHIHIHI.png"];
+    NSURL *url = [NSURL URLWithString:path];
+    NSData *data = [NSData dataWithContentsOfURL:url];
+    UIImage *img = [[UIImage alloc] initWithData:data];
+    [arrow setImage:img];
 }
 
 - (void)viewDidUnload
@@ -52,7 +59,7 @@
 -(IBAction)syncButtonPressed:(id)sender{
     
     time=0;
-    [syncButton setEnabled:FALSE];
+    //[syncButton setEnabled:FALSE];
     [self checkForPartner];
 }
 
@@ -65,7 +72,7 @@
 
 -(void)checkForPartner{
     
-    NSString *postString = [[NSString alloc] initWithFormat:@"UID=BBB&heading=%lf",localHeading];
+    NSString *postString = [[NSString alloc] initWithFormat:@"UID=AAA&heading=%lf",localHeading];
     [[Connection alloc] initWithSelector:@selector(response:)
                                 toTarget:self
                                  withURL:@"http://linus.highpoint.edu/~cweigandt/tester/getPartner.php"
@@ -85,10 +92,10 @@
         CLLocationDirection partnerHeading = (CLLocationDirection)[[chunks objectAtIndex:1] doubleValue];
         
         double error = 180 - abs(partnerHeading - localHeading);
-        if(error < 12 && error > -12){
+        if(error < 6 && error > -6){
             NSLog(@"---------You have connected to user %@", partnerUID);
         }else if(time == 10){
-            [syncButton setEnabled:TRUE];
+            //[syncButton setEnabled:TRUE];
         }else{
         //Maybe make this on timer to slow it down
             time++;
@@ -96,7 +103,7 @@
             [self checkForPartner];
         }
     }
-    [syncButton setEnabled:TRUE];
+    //[syncButton setEnabled:TRUE];
 
 }
 
