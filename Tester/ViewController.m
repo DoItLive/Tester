@@ -14,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize syncButton, dirLabel, arrow;
+@synthesize syncButton, dirLabel, errorLabel, arrow;
 @synthesize locationManager;
 
 - (void)viewDidLoad
@@ -44,8 +44,8 @@
     localHeading = newHeading.trueHeading;
     double rotation = (((int) (90 - localHeading)) % 360)/180.0*M_PI;
     arrow.transform = CGAffineTransformMakeRotation(rotation);
-    dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",[[locationManager heading] trueHeading]];
-
+    dirLabel.text=[[NSString alloc] initWithFormat:@"%lf",localHeading];
+    errorLabel.text = [[NSString alloc] initWithFormat:@"%lf",newHeading.headingAccuracy];
 }
 
 
