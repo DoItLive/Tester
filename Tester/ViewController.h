@@ -17,6 +17,7 @@
     UILabel *dirLabel;
     UILabel *errorLabel;
     UIImageView *arrow;
+    UIImageView *qrcode;
     
     NSInteger time;
     
@@ -31,6 +32,7 @@
 @property (nonatomic) IBOutlet UILabel *dirLabel;
 @property (nonatomic) IBOutlet UILabel *errorLabel;
 @property (nonatomic) IBOutlet UIImageView *arrow;
+@property (nonatomic) IBOutlet UIImageView *qrcode;
 
 -(IBAction)syncButtonPressed:(id)sender;
 

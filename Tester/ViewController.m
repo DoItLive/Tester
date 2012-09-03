@@ -14,7 +14,7 @@
 
 @implementation ViewController
 
-@synthesize syncButton, dirLabel, errorLabel, arrow;
+@synthesize syncButton, dirLabel, errorLabel, arrow, qrcode;
 @synthesize locationManager;
 
 - (void)viewDidLoad
@@ -33,11 +33,11 @@
     [locationManager startUpdatingHeading];
     
     //
-    NSString* path = [[NSString alloc] initWithFormat:@"http://chart.apis.google.com/chart?cht=qr&chs=120x120&chld=L&choe=UTF-8&HIHIHIHI.png"];
+    NSString* path = [[NSString alloc] initWithFormat:@"http://chart.apis.google.com/chart?cht=qr&chs=120x120&chld=L&choe=UTF-8&AAA"];
     NSURL *url = [NSURL URLWithString:path];
     NSData *data = [NSData dataWithContentsOfURL:url];
     UIImage *img = [[UIImage alloc] initWithData:data];
-    [arrow setImage:img];
+    [qrcode setImage:img];
 }
 
 - (void)viewDidUnload
